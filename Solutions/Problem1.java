@@ -25,9 +25,9 @@ public class Problem1 {
 		
 		ArrayList<Integer> multiples = new ArrayList<>();
 
-		for (int number = 0; number < 1000; number++) {
-			if (number % 3 == 0 || number % 5 == 0) {
-				multiples.add(number);
+		for (int divisor = 0; divisor < 1000; divisor++) {
+			if (divisor % 3 == 0 || divisor % 5 == 0) {
+				multiples.add(divisor);
 			}
 		}
 
