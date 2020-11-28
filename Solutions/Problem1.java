@@ -21,13 +21,20 @@ public class Problem1 {
 		return sum;
 	}
 
+	public static boolean isDivisibleBy3or5(int number) {
+		if (number % 3 == 0 || number % 5 == 0){
+			return true;
+		}
+		return false;
+	}
+
 	public static void main(String[] ismailgunayy) {
 		
 		ArrayList<Integer> multiples = new ArrayList<>();
 
-		for (int divisor = 0; divisor < 1000; divisor++) {
-			if (divisor % 3 == 0 || divisor % 5 == 0) {
-				multiples.add(divisor);
+		for (int number = 0; number < 1000; number++) {
+			if(isDivisibleBy3or5(number)){
+				multiples.add(number);
 			}
 		}
 
