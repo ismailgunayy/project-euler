@@ -11,7 +11,7 @@
  */
 
 public class Problem6 {
-	
+
 	public static int sumOfTheSquares(int toNumber) {
 		int sum = 0;
 		for (int number = 1; number <= toNumber; number++) {
