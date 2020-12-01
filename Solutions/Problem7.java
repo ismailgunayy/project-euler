@@ -32,7 +32,7 @@ public class Problem7 {
 		return number;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] ismailgunayy) {
 			
 		System.out.println(nthPrime(10001));
 
