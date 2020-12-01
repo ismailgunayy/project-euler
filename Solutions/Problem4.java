@@ -10,6 +10,7 @@
  */
 
 public class Problem4{
+	
 	public static boolean isPalindrome(int number) {
 
 		String numAsText = String.valueOf(number);
