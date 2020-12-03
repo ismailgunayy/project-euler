@@ -10,7 +10,6 @@
  *
  */
 
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,7 +18,7 @@ public class Problem8 {
 
     public static String readNumberStringFromFile() {
         try {
-            Scanner reader = new Scanner(new File("Problem8_Number.txt"));
+            Scanner reader = new Scanner(new File("requiredFiles/Problem8_Number.txt"));
             String number = "";
 
             while (reader.hasNextLine()) {
@@ -40,7 +39,7 @@ public class Problem8 {
 
         double maxProduct = 0;
         double tempProduct = 1;
-    
+
         for (int index = 0; index < numText.length() - 12; index++) {
             for (int index2 = index; index2 < index + 13; index2++) {
                 tempProduct *= Character.getNumericValue(numText.charAt(index2));
