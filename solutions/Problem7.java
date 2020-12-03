@@ -1,4 +1,4 @@
-/** 
+/**
  *
  * Problem 7
  * What is the 10001st prime number?
@@ -11,18 +11,29 @@
 public class Problem7 {
 
 	public static boolean isPrime(int number) {
-		if (number == 2) return true;
-		for (int divisor = 2; divisor <= (number / 2); divisor++) {
-			if (number % divisor == 0) return false;
+		if (number == 0 || number == 1)
+			return false;
+
+		if (number == 2)
+			return true;
+
+		else if (number % 2 == 0)
+			return false;
+
+		else {
+			for (int divisor = 2; divisor <= Math.sqrt(number); divisor++) {
+				if (number % divisor == 0)
+					return false;
+			}
+			return true;
 		}
-		return true;
 	}
 
 	public static int nthPrime(int n) {
-		
+
 		int count = 0;
 		int number = 2;
-		while (true) {	
+		while (true) {
 			if (isPrime(number)) {
 				count += 1;
 			}
@@ -33,7 +44,7 @@ public class Problem7 {
 	}
 
 	public static void main(String[] ismailgunayy) {
-			
+
 		System.out.println(nthPrime(10001));
 
 	}

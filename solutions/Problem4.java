@@ -10,20 +10,20 @@
  */
 
 public class Problem4 {
-	
+
 	public static boolean isPalindrome(int number) {
 
 		String numAsText = String.valueOf(number);
 		for (int index = 0; index < numAsText.length(); index++) {
 			if (numAsText.charAt(index) != numAsText.charAt(numAsText.length() - 1 - index)) {
 				return false;
-			}	
+			}
 		}
 		return true;
 	}
 
 	public static void main(String[] ismailgunayy){
-	
+
 		int largestPalindrome = 0;
 		int tempNumber = 0;
 

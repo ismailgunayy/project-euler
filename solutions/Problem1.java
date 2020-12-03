@@ -12,7 +12,7 @@
 import java.util.ArrayList;
 
 public class Problem1 {
-	
+
 	public static int sumOfArrList(ArrayList<Integer> arrList) {
 		int sum = 0;
 		for (int number : arrList) {
@@ -29,7 +29,7 @@ public class Problem1 {
 	}
 
 	public static void main(String[] ismailgunayy) {
-		
+
 		ArrayList<Integer> multiples = new ArrayList<>();
 
 		for (int number = 0; number < 1000; number++) {

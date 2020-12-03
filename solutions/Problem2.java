@@ -1,7 +1,7 @@
 /**
  *
  * Problem 2
- * By considering the terms in Fibonacci sequemce
+ * By considering the terms in Fibonacci sequence
  * whose values do note exceed four million, find te sum of the even valued terms
  * The answer is 4613732
  *
@@ -13,7 +13,7 @@
 import java.util.ArrayList;
 
 public class Problem2 {
-	
+
 	public static int fib(int n) {
 		if (n <= 1) {
 			return 1;
