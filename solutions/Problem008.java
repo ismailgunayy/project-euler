@@ -14,7 +14,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class Problem8 {
+public class Problem008 {
 
     public static String readNumberStringFromFile() {
         try {

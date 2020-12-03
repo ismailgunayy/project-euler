@@ -10,8 +10,8 @@
  *
  */
 
-public class Problem6 {
-	
+public class Problem006 {
+
 	public static int sumOfTheSquares(int toNumber) {
 		int sum = 0;
 		for (int number = 1; number <= toNumber; number++) {
@@ -30,7 +30,7 @@ public class Problem6 {
 	}
 
 	public static void main(String[] ismailgunayy) {
-	
+
 		int toNumber = 100;
 		System.out.println(squareOfTheSum(toNumber) - sumOfTheSquares(toNumber));
 

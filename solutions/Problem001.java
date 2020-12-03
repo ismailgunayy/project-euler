@@ -11,7 +11,7 @@
 
 import java.util.ArrayList;
 
-public class Problem1 {
+public class Problem001 {
 
 	public static int sumOfArrList(ArrayList<Integer> arrList) {
 		int sum = 0;

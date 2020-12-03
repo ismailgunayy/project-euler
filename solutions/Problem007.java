@@ -8,7 +8,7 @@
  * @author ismailgunayy
  */
 
-public class Problem7 {
+public class Problem007 {
 
 	public static boolean isPrime(int number) {
 		if (number == 0 || number == 1)
