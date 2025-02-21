@@ -1,2 +1,20 @@
-*.class
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
 *.log
+npm-debug.log*
+
+# System
+.DS_Store

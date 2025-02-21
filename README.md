@@ -1,3 +1,7 @@
-# My solutions to Project Euler Problems
+# Project Euler Solutions
 
-You can find all the problems on the [**Project Euler**](https://projecteuler.net/)
+TypeScript solutions for Project Euler problems.
+
+## Commands
+- `npm run solve <number>` - Run specific solution
+- `npm run new` - Generate new solution template

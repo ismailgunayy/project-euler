@@ -1,0 +1,16 @@
+import { measurePerformance, logResults } from '../metrics/performance';
+
+/**
+ * Problem {{number}}: [Title]
+ */
+export function solve(): number {
+  // Solution here
+
+  return 0;
+}
+
+if (require.main === module) {
+  const metrics = measurePerformance(solve);
+
+  logResults({{number}}, metrics);
+}
