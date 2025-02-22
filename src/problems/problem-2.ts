@@ -2,33 +2,28 @@ import { measurePerformance, logResults } from '../metrics/performance';
 
 /**
  * Problem 2: Sum of even-valued fibonacci numbers below 4.000.000
+ *
+ * Learned that if n >= 3 and fib(n) is even;
+ * fib (n + 3) = 4 * fib(n) + fib(n - 3)
  */
 function solve(): number {
-  function isEven(n: number) {
-    return n % 2 === 0;
-  }
-
-  function sumOfEvenValuedFibonacciNumbers(
-    threshold: number,
-    condition: (n: number) => boolean,
-  ) {
+  function sumOfEvenValuedFibonacciNumbers(threshold: number) {
     let sum = 0,
-      num1 = 1, // 1st fib
-      num2 = 1; // 2nd fib
+      current = 2, // starting from fib(3) which is the first even number
+      previous = 0;
 
-    while (num2 < threshold) {
-      if (condition(num2)) {
-        sum += num2;
-      }
+    while (current < threshold) {
+      sum += current;
 
-      num2 = num2 + num1;
-      num1 = num2 - num1;
+      const next = 4 * current + previous;
+      previous = current;
+      current = next;
     }
 
     return sum;
   }
 
-  return sumOfEvenValuedFibonacciNumbers(4000000, isEven);
+  return sumOfEvenValuedFibonacciNumbers(4000000);
 }
 
 if (require.main === module) {
