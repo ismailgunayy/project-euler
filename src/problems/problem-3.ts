@@ -4,38 +4,18 @@ import { measurePerformance, logResults } from '../metrics/performance';
  * Problem 3: Largest prime factor of the number 600.851.475.143
  */
 function solve(): number {
-  const primeNumbers: number[] = [];
-
-  function isPrime(n: number) {
-    if (n === 2) return true;
-
-    for (const primeNum of primeNumbers) {
-      if (n % primeNum === 0) return false;
-    }
-
-    return true;
-  }
-
   function findLargestPrimeFactorOfNumber(num: number) {
-    let counter = 1;
-    let biggestPrimeFactor = 1;
+    let factor = 2;
 
-    while (true) {
-      counter++;
-
-      if (isPrime(counter)) {
-        primeNumbers.push(counter);
-      } else continue;
-
-      if (num % counter === 0) {
-        biggestPrimeFactor = counter;
-        num /= counter;
+    while (num !== 1) {
+      if (num % factor === 0) {
+        num /= factor;
+      } else {
+        factor += factor === 2 ? 1 : 2;
       }
-
-      if (num === 1) break;
     }
 
-    return biggestPrimeFactor;
+    return factor;
   }
 
   return findLargestPrimeFactorOfNumber(600851475143);
