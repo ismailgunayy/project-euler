@@ -23,8 +23,8 @@ export function measurePerformance(fn: () => any): Metrics {
 
   const result = fn();
 
-  const end = process.hrtime.bigint();
   const endMem = process.memoryUsage().heapUsed;
+  const end = process.hrtime.bigint();
 
   return {
     result,
