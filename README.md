@@ -3,6 +3,6 @@
 TypeScript solutions for Project Euler problems.
 
 ## Commands
-- `npm run new <number>` - Generate new solution template
-- `npm run solve <number>` - Run the solution + log
-- `npm run test <number>` - Test the solution
+- `yarn new <number>` - Generate new solution template
+- `yarn solve <number>` - Run the solution + log
+- `yarn test <number>` - Test the solution
