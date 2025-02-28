@@ -2,8 +2,6 @@ interface Metrics {
   result: any;
   time: string;
   memory: string;
-  iterations?: number;
-  complexity?: string;
 }
 
 function formatTime(ms: number): string {
@@ -33,12 +31,15 @@ export function measurePerformance(fn: () => any): Metrics {
   };
 }
 
-export function logResults(problemNumber: number, metrics: Metrics) {
+export function logResults(
+  problemNumber: number,
+  { result, time, memory }: Metrics
+) {
   console.log('\n' + '='.repeat(40));
   console.log(`Problem ${problemNumber} Results`);
   console.log('='.repeat(40));
-  console.log(`Result: ${metrics.result}`);
-  console.log(`Time:   ${metrics.time}`);
-  console.log(`Memory: ${metrics.memory}`);
+  console.log(`Result: ${result}`);
+  console.log(`Time:   ${time}`);
+  console.log(`Memory: ${memory}`);
   console.log('='.repeat(40) + '\n');
 }
