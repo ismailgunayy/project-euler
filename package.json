@@ -4,7 +4,8 @@
   "main": "main.js",
   "scripts": {
     "new": "sh new.sh",
-    "solve": "sh solve.sh"
+    "solve": "sh run.sh solve",
+    "test": "sh run.sh test"
   },
   "keywords": [],
   "author": "",

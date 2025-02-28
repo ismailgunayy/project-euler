@@ -3,7 +3,7 @@ import { measurePerformance, logResults } from '../metrics/performance';
 /**
  * Problem 4: Largest Palindrome Product of two 3-digit numbers
  */
-function solve(): number {
+export default function solve(): number {
   function isPalindrome(num: number): boolean {
     const numStr = num.toString();
     return numStr === numStr.split('').reverse().join('');

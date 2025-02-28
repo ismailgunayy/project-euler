@@ -6,7 +6,7 @@ import { measurePerformance, logResults } from '../metrics/performance';
  * Learned that if n >= 3 and fib(n) is even;
  * fib (n + 3) = 4 * fib(n) + fib(n - 3)
  */
-function solve(): number {
+export default function solve(): number {
   function sumOfEvenFibs(
     current: number,
     previous: number,

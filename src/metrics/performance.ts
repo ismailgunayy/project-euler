@@ -1,5 +1,6 @@
 import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'fs';
 
+const mode = process.argv[2];
 interface Metrics {
   result: any;
   time: string;
@@ -84,7 +85,9 @@ export function logResults(
   }).format(new Date());
 
   const logMessage = `
-    Trial ${trialNumber}
+    Problem ${problemNumber} | ${
+    mode === 'solve' ? `Trial ${trialNumber}` : 'Test'
+  }
     =================================
     Timestamp: ${timestamp}
     Result: ${result}
@@ -96,5 +99,7 @@ export function logResults(
 
   console.log(logMessage);
 
-  appendFileSync(logFilePath, logMessage);
+  if (mode === 'solve') {
+    appendFileSync(logFilePath, logMessage);
+  }
 }

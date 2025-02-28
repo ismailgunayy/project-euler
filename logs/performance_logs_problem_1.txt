@@ -1,18 +1,17 @@
 
-    Trial 1
+    Problem 1 | Trial 1
     =================================
     Timestamp: February 28, 2025 at 17:17:04
     Result: 233168
     Time:   44.58μs
-    Memory: 
+    Memory:
       RSS: 0.00KB,
       Heap Total: 0.00KB,
       Heap Used: 4.77KB,
       External: 0.05KB
-    
-    CPU:    
+
+    CPU:
       User: 0.04ms,
       System: 0.00ms
-    
+
     =================================
-  
