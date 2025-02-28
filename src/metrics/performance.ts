@@ -1,7 +1,10 @@
+import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'fs';
+
 interface Metrics {
   result: any;
   time: string;
   memory: string;
+  cpu: string;
 }
 
 function formatTime(ms: number): string {
@@ -16,30 +19,82 @@ function formatMemory(mb: number): string {
 }
 
 export function measurePerformance(fn: () => any): Metrics {
-  const startMem = process.memoryUsage().heapUsed;
+  const startMem = process.memoryUsage();
   const start = process.hrtime.bigint();
+  const startCPU = process.cpuUsage();
 
   const result = fn();
 
-  const endMem = process.memoryUsage().heapUsed;
+  const endMem = process.memoryUsage();
   const end = process.hrtime.bigint();
+  const endCPU = process.cpuUsage();
+
+  const userCPUTime = (endCPU.user - startCPU.user) / 1000;
+  const systemCPUTime = (endCPU.system - startCPU.system) / 1000;
 
   return {
     result,
     time: formatTime(Number(end - start) / 1_000_000),
-    memory: formatMemory((endMem - startMem) / 1024 / 1024),
+    memory: `
+      RSS: ${formatMemory(
+        Math.max(0, (endMem.rss - startMem.rss) / 1024 / 1024)
+      )},
+      Heap Total: ${formatMemory(
+        Math.max(0, (endMem.heapTotal - startMem.heapTotal) / 1024 / 1024)
+      )},
+      Heap Used: ${formatMemory(
+        Math.max(0, (endMem.heapUsed - startMem.heapUsed) / 1024 / 1024)
+      )},
+      External: ${formatMemory(
+        Math.max(0, (endMem.external - startMem.external) / 1024 / 1024)
+      )}
+    `,
+    cpu: `
+      User: ${userCPUTime.toFixed(2)}ms,
+      System: ${systemCPUTime.toFixed(2)}ms
+    `,
   };
 }
 
 export function logResults(
   problemNumber: number,
-  { result, time, memory }: Metrics
+  { result, time, memory, cpu }: Metrics
 ) {
-  console.log('\n' + '='.repeat(40));
-  console.log(`Problem ${problemNumber} Results`);
-  console.log('='.repeat(40));
-  console.log(`Result: ${result}`);
-  console.log(`Time:   ${time}`);
-  console.log(`Memory: ${memory}`);
-  console.log('='.repeat(40) + '\n');
+  const logDir = 'logs';
+  if (!existsSync(logDir)) {
+    mkdirSync(logDir);
+  }
+
+  const logFilePath = `${logDir}/performance_logs_problem_${problemNumber}.txt`;
+
+  let trialNumber = 1;
+  if (existsSync(logFilePath)) {
+    const fileContent = readFileSync(logFilePath, 'utf-8');
+    trialNumber = (fileContent.match(/Trial \d+/g) || []).length + 1;
+  }
+
+  const timestamp = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: false,
+  }).format(new Date());
+
+  const logMessage = `
+    Trial ${trialNumber}
+    =================================
+    Timestamp: ${timestamp}
+    Result: ${result}
+    Time:   ${time}
+    Memory: ${memory}
+    CPU:    ${cpu}
+    =================================
+  `;
+
+  console.log(logMessage);
+
+  appendFileSync(logFilePath, logMessage);
 }
