@@ -15,7 +15,9 @@ function solve(): number {
     for (let j = 999; j >= 100; j--) {
       const product = i * j;
 
-      if (isPalindrome(product) && product > largestPalindrome) {
+      if (product <= largestPalindrome) break;
+
+      if (isPalindrome(product) && product) {
         largestPalindrome = product;
       }
     }
