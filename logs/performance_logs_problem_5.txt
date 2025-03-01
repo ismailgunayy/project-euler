@@ -1,0 +1,20 @@
+
+    Problem 5 | Trial 1
+    =================================
+    Result: 232792560
+    Timestamp: March 1, 2025 at 17:30:17
+
+    Time: 142.83μs
+
+    Memory: 
+      RSS: 0.00KB,
+      Heap Total: 0.00KB,
+      Heap Used: 24.41KB,
+      External: 0.05KB
+    
+    CPU:  
+      User: 0.12ms,
+      System: 0.02ms
+    
+    =================================
+  
