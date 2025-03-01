@@ -1,9 +1,11 @@
 
     Problem 4 | Trial 1
     =================================
-    Timestamp: February 28, 2025 at 17:17:53
     Result: 906609
-    Time:   104.60ms
+    Timestamp: February 28, 2025 at 17:17:53
+
+    Time: 104.60ms
+
     Memory:
       RSS: 4.38MB,
       Heap Total: 4.75MB,
@@ -18,9 +20,11 @@
 
     Problem 4 | Trial 2
     =================================
-    Timestamp: February 28, 2025 at 17:18:50
     Result: 906609
-    Time:   1.52ms
+    Timestamp: February 28, 2025 at 17:18:50
+
+    Time: 1.52ms
+
     Memory:
       RSS: 0.00KB,
       Heap Total: 0.00KB,
