@@ -7,17 +7,17 @@ import { measurePerformance, logResults } from '../metrics/performance';
  * of the first one hundred natural numbers
  */
 export default function solve(): number {
-	let sum = 0;
-	let sumOfSquares = 0;
-
-	for (let i = 1; i <= 100; i++) {
-		sum += i;
-		sumOfSquares += i ** 2;
+	function squareOfTheSum(num: number) {
+		const sum = (num * (num + 1)) / 2;
+		return sum ** 2;
 	}
 
-	const squareOfSum = sum ** 2;
+	function sumOfTheSquares(num: number) {
+		return (num * (num + 1) * (2 * num + 1)) / 6;
+	}
 
-	return squareOfSum - sumOfSquares;
+	const number = 100;
+	return squareOfTheSum(number) - sumOfTheSquares(number);
 }
 
 if (require.main === module) {

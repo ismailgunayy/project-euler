@@ -18,3 +18,22 @@
     
     =================================
   
+    Problem 6 | Trial 2
+    =================================
+    Result: 25164150
+    Timestamp: March 1, 2025 at 18:30:19
+
+    Time: 34.96μs
+
+    Memory: 
+      RSS: 0.00KB,
+      Heap Total: 0.00KB,
+      Heap Used: 5.52KB,
+      External: 0.05KB
+    
+    CPU:  
+      User: 0.03ms,
+      System: 0.00ms
+    
+    =================================
+  
