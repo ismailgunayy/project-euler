@@ -4,6 +4,8 @@ import { measurePerformance, logResults } from '../metrics/performance';
  * Problem 8: Find the thirteen adjacent digits in the
  * 1000-digit number that have the greatest product.
  *
+ * Optimisation steps:
+ * 1 - If there is 0 in the adjacent digits of the serie, jump the loop for the length of the series
  */
 export default function solve(): number {
 	const number =
@@ -20,6 +22,8 @@ export default function solve(): number {
 
 		for (let i = 0; i < seriesLength; i++) {
 			product *= Number(numStr[startIndex + i]);
+
+			if (product === 0) return 0;
 		}
 
 		return product;
@@ -29,8 +33,15 @@ export default function solve(): number {
 	const seriesLength = 13;
 	let largestProduct = 1;
 
-	for (let i = 0; i <= numStr.length - seriesLength; i++) {
+	for (let i = 0; i <= numStr.length - seriesLength; ) {
 		const product = findProductOfAdjacentDigits(numStr, i, seriesLength);
+
+		if (product === 0) {
+			i += seriesLength;
+			continue;
+		} else {
+			i++;
+		}
 
 		if (product > largestProduct) {
 			largestProduct = product;
