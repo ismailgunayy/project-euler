@@ -5,7 +5,8 @@ import { measurePerformance, logResults } from '../metrics/performance';
  * 1000-digit number that have the greatest product.
  *
  * Optimisation steps:
- * 1 - If there is 0 in the adjacent digits of the serie, jump the loop for the length of the series
+ * 1 - If there is a 0 in the adjacent digits of the serie, skip seriesLength steps
+ * 2 - If product, and the digits before and after the series are not 0, divide the product by the last digit before the series and multiply it by the next digit after the series
  */
 export default function solve(): number {
 	const number =
@@ -32,19 +33,27 @@ export default function solve(): number {
 	const numStr = number.toString();
 	const seriesLength = 13;
 	let largestProduct = 1;
+	let product = -1;
 
 	for (let i = 0; i <= numStr.length - seriesLength; ) {
-		const product = findProductOfAdjacentDigits(numStr, i, seriesLength);
+		const digitBeforeSeries = Number(numStr[i - 1]);
+		const digitAfterSeries = Number(numStr[i + seriesLength - 1]);
 
-		if (product === 0) {
-			i += seriesLength;
-			continue;
+		if (product > 0 && digitBeforeSeries !== 0 && digitAfterSeries !== 0) {
+			// No need to calculate the product again, just divide by last digit and multiply by next digit
+			product = (product / digitBeforeSeries) * digitAfterSeries;
 		} else {
-			i++;
+			product = findProductOfAdjacentDigits(numStr, i, seriesLength);
 		}
 
 		if (product > largestProduct) {
 			largestProduct = product;
+		}
+
+		if (product === 0) {
+			i += seriesLength; // If there is a 0 in the seriesLength, skip seriesLength steps
+		} else {
+			i++;
 		}
 	}
 

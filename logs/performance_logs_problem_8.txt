@@ -37,3 +37,22 @@
     
     =================================
   
+    Problem 8 | Trial 3
+    =================================
+    Result: 23514624000
+    Timestamp: March 3, 2025 at 15:16:08
+
+    Time: 144.75μs
+
+    Memory: 
+      RSS: 16.00KB,
+      Heap Total: 0.00KB,
+      Heap Used: 8.25KB,
+      External: 0.05KB
+    
+    CPU:  
+      User: 0.14ms,
+      System: 0.01ms
+    
+    =================================
+  
