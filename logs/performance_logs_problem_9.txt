@@ -18,3 +18,22 @@
     
     =================================
   
+    Problem 9 | Trial 2
+    =================================
+    Result: 31875000
+    Timestamp: March 6, 2025 at 13:45:04
+
+    Time: 915.33μs
+
+    Memory: 
+      RSS: 32.00KB,
+      Heap Total: 0.00KB,
+      Heap Used: 1.60MB,
+      External: 0.05KB
+    
+    CPU:  
+      User: 1.33ms,
+      System: 0.03ms
+    
+    =================================
+  
