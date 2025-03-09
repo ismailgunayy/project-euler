@@ -18,3 +18,22 @@
     
     =================================
   
+    Problem 10 | Trial 2
+    =================================
+    Result: 142913828922
+    Timestamp: March 9, 2025 at 13:23:35
+
+    Time: 124.92ms
+
+    Memory: 
+      RSS: 16.00KB,
+      Heap Total: 0.00KB,
+      Heap Used: 2.29MB,
+      External: 0.05KB
+    
+    CPU:  
+      User: 125.59ms,
+      System: 0.67ms
+    
+    =================================
+  
