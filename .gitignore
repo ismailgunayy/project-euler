@@ -13,7 +13,6 @@ build/
 .idea/
 
 # Logs
-*.log
 npm-debug.log*
 
 # System
