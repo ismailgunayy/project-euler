@@ -1,5 +1,5 @@
 
-    Problem 4 | Trial 1
+    Problem 04 | Trial 1
     =================================
     Result: 906609
     Timestamp: February 28, 2025 at 17:17:53
@@ -18,7 +18,7 @@
 
     =================================
 
-    Problem 4 | Trial 2
+    Problem 04 | Trial 2
     =================================
     Result: 906609
     Timestamp: February 28, 2025 at 17:18:50

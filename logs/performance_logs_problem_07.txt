@@ -1,39 +1,38 @@
 
-    Problem 7 | Trial 1
+    Problem 07 | Trial 1
     =================================
     Result: 104743
     Timestamp: March 2, 2025 at 20:36:22
 
     Time: 335.59ms
 
-    Memory: 
+    Memory:
       RSS: 16.00KB,
       Heap Total: 0.00KB,
       Heap Used: 273.05KB,
       External: 0.05KB
-    
-    CPU:  
+
+    CPU:
       User: 336.09ms,
       System: 0.34ms
-    
+
     =================================
-  
-    Problem 7 | Trial 2
+
+    Problem 07 | Trial 2
     =================================
     Result: 104743
     Timestamp: March 2, 2025 at 20:51:36
 
     Time: 5.23ms
 
-    Memory: 
+    Memory:
       RSS: 16.00KB,
       Heap Total: 0.00KB,
       Heap Used: 319.44KB,
       External: 0.05KB
-    
-    CPU:  
+
+    CPU:
       User: 6.11ms,
       System: 0.05ms
-    
+
     =================================
-  

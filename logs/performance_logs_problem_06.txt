@@ -1,39 +1,38 @@
 
-    Problem 6 | Trial 1
+    Problem 06 | Trial 1
     =================================
     Result: 25164150
     Timestamp: March 1, 2025 at 18:29:32
 
     Time: 73.00μs
 
-    Memory: 
+    Memory:
       RSS: 16.00KB,
       Heap Total: 0.00KB,
       Heap Used: 13.71KB,
       External: 0.05KB
-    
-    CPU:  
+
+    CPU:
       User: 0.06ms,
       System: 0.01ms
-    
+
     =================================
-  
-    Problem 6 | Trial 2
+
+    Problem 06 | Trial 2
     =================================
     Result: 25164150
     Timestamp: March 1, 2025 at 18:30:19
 
     Time: 34.96μs
 
-    Memory: 
+    Memory:
       RSS: 0.00KB,
       Heap Total: 0.00KB,
       Heap Used: 5.52KB,
       External: 0.05KB
-    
-    CPU:  
+
+    CPU:
       User: 0.03ms,
       System: 0.00ms
-    
+
     =================================
-  

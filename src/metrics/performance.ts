@@ -61,12 +61,14 @@ export function logResults(
 	problemNumber: number,
 	{ result, time, memory, cpu }: Metrics,
 ) {
+	const problemNumberStr = problemNumber.toString().padStart(2, '0');
+
 	const logDir = 'logs';
 	if (!existsSync(logDir)) {
 		mkdirSync(logDir);
 	}
 
-	const logFilePath = `${logDir}/performance_logs_problem_${problemNumber}.txt`;
+	const logFilePath = `${logDir}/performance_logs_problem_${problemNumberStr}.txt`;
 
 	let trialNumber = 1;
 	if (existsSync(logFilePath)) {
@@ -85,7 +87,7 @@ export function logResults(
 	}).format(new Date());
 
 	const logMessage = `
-    Problem ${problemNumber} | ${
+    Problem ${problemNumberStr} | ${
 			mode === 'solve' ? `Trial ${trialNumber}` : 'Test'
 		}
     =================================

@@ -1,58 +1,57 @@
 
-    Problem 8 | Trial 1
+    Problem 08 | Trial 1
     =================================
     Result: 23514624000
     Timestamp: March 3, 2025 at 14:45:18
 
     Time: 462.63μs
 
-    Memory: 
+    Memory:
       RSS: 32.00KB,
       Heap Total: 0.00KB,
       Heap Used: 15.20KB,
       External: 0.05KB
-    
-    CPU:  
+
+    CPU:
       User: 1.20ms,
       System: 0.02ms
-    
+
     =================================
-  
-    Problem 8 | Trial 2
+
+    Problem 08 | Trial 2
     =================================
     Result: 23514624000
     Timestamp: March 3, 2025 at 14:52:51
 
     Time: 196.54μs
 
-    Memory: 
+    Memory:
       RSS: 16.00KB,
       Heap Total: 0.00KB,
       Heap Used: 9.89KB,
       External: 0.05KB
-    
-    CPU:  
+
+    CPU:
       User: 0.86ms,
       System: 0.01ms
-    
+
     =================================
-  
-    Problem 8 | Trial 3
+
+    Problem 08 | Trial 3
     =================================
     Result: 23514624000
     Timestamp: March 3, 2025 at 15:16:08
 
     Time: 144.75μs
 
-    Memory: 
+    Memory:
       RSS: 16.00KB,
       Heap Total: 0.00KB,
       Heap Used: 8.25KB,
       External: 0.05KB
-    
-    CPU:  
+
+    CPU:
       User: 0.14ms,
       System: 0.01ms
-    
+
     =================================
-  

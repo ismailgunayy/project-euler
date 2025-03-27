@@ -1,5 +1,5 @@
 
-    Problem 3 | Trial 1
+    Problem 03 | Trial 1
     =================================
     Result: 6857
     Timestamp: February 28, 2025 at 17:17:16
