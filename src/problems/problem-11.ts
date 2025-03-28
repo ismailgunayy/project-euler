@@ -5,74 +5,66 @@ import { gridForProblem11 as grid } from './data/problem-11.data';
  * Problem 11: Find the greatest product of four adjacent numbers
  * in the same direction (up, down, left, right, or diagonally) in a grid
  * which satisfies the grid.length = grid[n].length constraint (square)
+ *
+ * Optimisation steps:
+ * 1 - Functions create so much overhead.
+ * In terms of readability and modularity, they are surely a good choice.
+ * However, in terms of performance, it's way better to do the operation right on the spot instead of creating and calling a separate function.
  */
 export default function solve(): number {
-	function leftToRight(row: number, col: number) {
-		if (col > 16) {
-			return 0;
-		}
-
-		return (
-			grid[row][col] *
-			grid[row][col + 1] *
-			grid[row][col + 2] *
-			grid[row][col + 3]
-		);
-	}
-
-	function topToBottom(row: number, col: number) {
-		if (row > 16) {
-			return 0;
-		}
-
-		return (
-			grid[row][col] *
-			grid[row + 1][col] *
-			grid[row + 2][col] *
-			grid[row + 3][col]
-		);
-	}
-
-	function diagonalMain(row: number, col: number) {
-		if (row > 16 || col > 16) {
-			return 0;
-		}
-
-		return (
-			grid[row][col] *
-			grid[row + 1][col + 1] *
-			grid[row + 2][col + 2] *
-			grid[row + 3][col + 3]
-		);
-	}
-
-	function diagonalAnti(row: number, col: number) {
-		if (row > 16 || col < 3) {
-			return 0;
-		}
-
-		return (
-			grid[row][col] *
-			grid[row + 1][col - 1] *
-			grid[row + 2][col - 2] *
-			grid[row + 3][col - 3]
-		);
-	}
+	const GRID_SIZE = grid.length;
+	const ADJACENT_SIZE = 4;
 
 	let maxProduct = 1;
 
-	for (let row = 0; row < grid.length; row++) {
-		for (let col = 0; col < grid.length; col++) {
-			let max = Math.max(
-				leftToRight(row, col),
-				topToBottom(row, col),
-				diagonalMain(row, col),
-				diagonalAnti(row, col),
-			);
+	for (let row = 0; row < GRID_SIZE; row++) {
+		for (let col = 0; col < GRID_SIZE; col++) {
+			let products = [maxProduct];
 
-			if (max > maxProduct) {
-				maxProduct = max;
+			// Left to right
+			if (col <= GRID_SIZE - ADJACENT_SIZE) {
+				products.push(
+					grid[row][col] *
+						grid[row][col + 1] *
+						grid[row][col + 2] *
+						grid[row][col + 3],
+				);
 			}
+
+			// Top to bottom
+			if (row <= GRID_SIZE - ADJACENT_SIZE) {
+				products.push(
+					grid[row][col] *
+						grid[row + 1][col] *
+						grid[row + 2][col] *
+						grid[row + 3][col],
+				);
+			}
+
+			// Main diagonal
+			if (
+				row <= GRID_SIZE - ADJACENT_SIZE &&
+				col <= GRID_SIZE - ADJACENT_SIZE
+			) {
+				products.push(
+					grid[row][col] *
+						grid[row + 1][col + 1] *
+						grid[row + 2][col + 2] *
+						grid[row + 3][col + 3],
+				);
+			}
+
+			// Anti diagonal
+			if (row <= GRID_SIZE - ADJACENT_SIZE && col >= 3) {
+				products.push(
+					grid[row][col] *
+						grid[row + 1][col - 1] *
+						grid[row + 2][col - 2] *
+						grid[row + 3][col - 3],
+				);
+			}
+
+			maxProduct = Math.max(...products);
 		}
 	}
 
