@@ -1,4 +1,4 @@
-import { measurePerformance, logResults } from '../metrics/performance';
+import { measurePerformance, logResults } from "../metrics/performance";
 
 /**
  * Problem 6: The difference between

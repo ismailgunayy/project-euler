@@ -1,4 +1,4 @@
-import { measurePerformance, logResults } from '../metrics/performance';
+import { measurePerformance, logResults } from "../metrics/performance";
 
 /**
  * Problem 2: Sum of even-valued fibonacci numbers below 4.000.000
@@ -7,11 +7,7 @@ import { measurePerformance, logResults } from '../metrics/performance';
  * fib (n + 3) = 4 * fib(n) + fib(n - 3)
  */
 export default function solve(): number {
-	function sumOfEvenFibs(
-		current: number,
-		previous: number,
-		threshold: number,
-	): number {
+	function sumOfEvenFibs(current: number, previous: number, threshold: number): number {
 		if (current >= threshold) return 0;
 		return current + sumOfEvenFibs(4 * current + previous, current, threshold);
 	}

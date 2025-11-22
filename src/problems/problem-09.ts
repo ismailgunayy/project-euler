@@ -1,4 +1,4 @@
-import { measurePerformance, logResults } from '../metrics/performance';
+import { measurePerformance, logResults } from "../metrics/performance";
 
 /**
  * Problem 9: Find the product of a * b * c, in which a^2 + b^2 = c^2 and a + b + c = 1000

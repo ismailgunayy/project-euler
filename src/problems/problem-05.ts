@@ -1,4 +1,4 @@
-import { measurePerformance, logResults } from '../metrics/performance';
+import { measurePerformance, logResults } from "../metrics/performance";
 
 /**
  * Problem 5: Smallest positive number that is divisible by all numbers from 1 to 20

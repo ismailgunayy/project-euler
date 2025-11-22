@@ -1,5 +1,5 @@
-import { measurePerformance, logResults } from '../metrics/performance';
-import { gridForProblem11 as grid } from './data/problem-11.data';
+import { measurePerformance, logResults } from "../metrics/performance";
+import { gridForProblem11 as grid } from "./data/problem-11.data";
 
 /**
  * Problem 11: Find the greatest product of four adjacent numbers
@@ -23,45 +23,22 @@ export default function solve(): number {
 
 			// Left to right
 			if (col <= GRID_SIZE - ADJACENT_SIZE) {
-				products.push(
-					grid[row][col] *
-						grid[row][col + 1] *
-						grid[row][col + 2] *
-						grid[row][col + 3],
-				);
+				products.push(grid[row][col] * grid[row][col + 1] * grid[row][col + 2] * grid[row][col + 3]);
 			}
 
 			// Top to bottom
 			if (row <= GRID_SIZE - ADJACENT_SIZE) {
-				products.push(
-					grid[row][col] *
-						grid[row + 1][col] *
-						grid[row + 2][col] *
-						grid[row + 3][col],
-				);
+				products.push(grid[row][col] * grid[row + 1][col] * grid[row + 2][col] * grid[row + 3][col]);
 			}
 
 			// Main diagonal
-			if (
-				row <= GRID_SIZE - ADJACENT_SIZE &&
-				col <= GRID_SIZE - ADJACENT_SIZE
-			) {
-				products.push(
-					grid[row][col] *
-						grid[row + 1][col + 1] *
-						grid[row + 2][col + 2] *
-						grid[row + 3][col + 3],
-				);
+			if (row <= GRID_SIZE - ADJACENT_SIZE && col <= GRID_SIZE - ADJACENT_SIZE) {
+				products.push(grid[row][col] * grid[row + 1][col + 1] * grid[row + 2][col + 2] * grid[row + 3][col + 3]);
 			}
 
 			// Anti diagonal
 			if (row <= GRID_SIZE - ADJACENT_SIZE && col >= 3) {
-				products.push(
-					grid[row][col] *
-						grid[row + 1][col - 1] *
-						grid[row + 2][col - 2] *
-						grid[row + 3][col - 3],
-				);
+				products.push(grid[row][col] * grid[row + 1][col - 1] * grid[row + 2][col - 2] * grid[row + 3][col - 3]);
 			}
 
 			maxProduct = Math.max(...products);

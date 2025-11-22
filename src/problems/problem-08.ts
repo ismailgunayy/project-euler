@@ -1,5 +1,5 @@
-import { measurePerformance, logResults } from '../metrics/performance';
-import { numberForProblem08 as number } from './data/problem-08.data';
+import { measurePerformance, logResults } from "../metrics/performance";
+import { numberForProblem08 as number } from "./data/problem-08.data";
 
 /**
  * Problem 8: Find the thirteen adjacent digits in the
@@ -10,11 +10,7 @@ import { numberForProblem08 as number } from './data/problem-08.data';
  * 2 - If product, and the digits before and after the series are not 0, divide the product by the last digit before the series and multiply it by the next digit after the series
  */
 export default function solve(): number {
-	function findProductOfAdjacentDigits(
-		numStr: string,
-		startIndex: number,
-		seriesLength: number,
-	) {
+	function findProductOfAdjacentDigits(numStr: string, startIndex: number, seriesLength: number) {
 		let product = 1;
 
 		for (let i = 0; i < seriesLength; i++) {

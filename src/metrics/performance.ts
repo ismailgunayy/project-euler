@@ -1,4 +1,4 @@
-import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'fs';
+import { appendFileSync, existsSync, mkdirSync, readFileSync } from "fs";
 
 const mode = process.argv[2];
 interface Metrics {
@@ -37,18 +37,10 @@ export function measurePerformance(fn: () => any): Metrics {
 		result,
 		time: formatTime(Number(end - start) / 1_000_000),
 		memory: `
-      RSS: ${formatMemory(
-				Math.max(0, (endMem.rss - startMem.rss) / 1024 / 1024),
-			)},
-      Heap Total: ${formatMemory(
-				Math.max(0, (endMem.heapTotal - startMem.heapTotal) / 1024 / 1024),
-			)},
-      Heap Used: ${formatMemory(
-				Math.max(0, (endMem.heapUsed - startMem.heapUsed) / 1024 / 1024),
-			)},
-      External: ${formatMemory(
-				Math.max(0, (endMem.external - startMem.external) / 1024 / 1024),
-			)}
+      RSS: ${formatMemory(Math.max(0, (endMem.rss - startMem.rss) / 1024 / 1024))},
+      Heap Total: ${formatMemory(Math.max(0, (endMem.heapTotal - startMem.heapTotal) / 1024 / 1024))},
+      Heap Used: ${formatMemory(Math.max(0, (endMem.heapUsed - startMem.heapUsed) / 1024 / 1024))},
+      External: ${formatMemory(Math.max(0, (endMem.external - startMem.external) / 1024 / 1024))}
     `,
 		cpu: `
       User: ${userCPUTime.toFixed(2)}ms,
@@ -57,13 +49,10 @@ export function measurePerformance(fn: () => any): Metrics {
 	};
 }
 
-export function logResults(
-	problemNumber: number,
-	{ result, time, memory, cpu }: Metrics,
-) {
-	const problemNumberStr = problemNumber.toString().padStart(2, '0');
+export function logResults(problemNumber: number, { result, time, memory, cpu }: Metrics) {
+	const problemNumberStr = problemNumber.toString().padStart(2, "0");
 
-	const logDir = 'logs';
+	const logDir = "logs";
 	if (!existsSync(logDir)) {
 		mkdirSync(logDir);
 	}
@@ -72,24 +61,22 @@ export function logResults(
 
 	let trialNumber = 1;
 	if (existsSync(logFilePath)) {
-		const fileContent = readFileSync(logFilePath, 'utf-8');
+		const fileContent = readFileSync(logFilePath, "utf-8");
 		trialNumber = (fileContent.match(/Trial \d+/g) || []).length + 1;
 	}
 
-	const timestamp = new Intl.DateTimeFormat('en-US', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-		hour: 'numeric',
-		minute: 'numeric',
-		second: 'numeric',
+	const timestamp = new Intl.DateTimeFormat("en-US", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+		hour: "numeric",
+		minute: "numeric",
+		second: "numeric",
 		hour12: false,
 	}).format(new Date());
 
 	const logMessage = `
-    Problem ${problemNumberStr} | ${
-			mode === 'solve' ? `Trial ${trialNumber}` : 'Test'
-		}
+    Problem ${problemNumberStr} | ${mode === "solve" ? `Trial ${trialNumber}` : "Test"}
     =================================
     Result: ${result}
     Timestamp: ${timestamp}
@@ -103,7 +90,7 @@ export function logResults(
 
 	console.log(logMessage);
 
-	if (mode === 'solve') {
+	if (mode === "solve") {
 		appendFileSync(logFilePath, logMessage);
 	}
 }
